@@ -10,12 +10,12 @@ namespace Test
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("hello, this is my test task");
-            Console.WriteLine(@"would you like me to download the data? Y\N");
+            Console.WriteLine("Hello, this is my test task");
+            Console.WriteLine(@"Would you like me to download the data? Y\N");
             do
             {
                 ConsoleKeyInfo cki = Console.ReadKey();
-                if (cki.Key.ToString() == "Y" || cki.Key.ToString() == "y")
+                if (cki.Key.ToString().ToUpper() == "Y")
                 {
                     Console.WriteLine();
                     WebRequest request = WebRequest.Create("https://tester.consimple.pro/");
@@ -31,7 +31,7 @@ namespace Test
                         }
                     }
                 }
-                else if (cki.Key.ToString() == "N" || cki.Key.ToString() == "n")
+                else if (cki.Key.ToString().ToUpper() == "N")
                 {
                     Environment.Exit(0);
                     break;
